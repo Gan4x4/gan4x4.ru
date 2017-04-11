@@ -31,10 +31,10 @@ import Project from './project.js';
         // now DOM loaded but js script like bootstrap may be not  
         // $(window).on('load', function(){
             
-            hilightSkills($('p'));
+            hilightSkills($('#portfolio'));
 
             // copy href to visible text in empty links
-            formatLinks("body");
+            formatLinks($("body"));
             
             // add icons to github and bitbucket links 
             addGitSitesIcons();
