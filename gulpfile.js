@@ -8,16 +8,16 @@ var gulp = require('gulp');
 
 sass = require('gulp-sass');
 //  For ES2015 compability
-babel = require('gulp-babel');
-uglify = require('gulp-uglify');
+//babel = require('gulp-babel');
+//uglify = require('gulp-uglify');
 gutil = require( 'gulp-util' );  
 sftp = require('gulp-sftp');
 imagemin = require('gulp-imagemin');
 
 mocha = require('gulp-mocha'),
-babel_register = require('babel-register');
+babel_register = require('babel-register'); // fore mocha
 //babelify = require();
-concat = require('gulp-concat');
+//concat = require('gulp-concat');
 browserify = require('browserify');
 source = require('vinyl-source-stream');
 
