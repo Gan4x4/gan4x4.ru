@@ -9,7 +9,8 @@ export function hilightSkills($root, skill ){
             // replace special symbol like '++'
             var  preparedPattern =   skill[i].replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
             // replace all occurences of current skill in text
-            text =  text.replace(new RegExp('\\b'+preparedPattern+'[., ]?', 'gi'), " <span class='label label-default skill'>"+skill[i]+"</span> ");
+            // we can't use second \\b becouse c++ ended on not - letter symbol
+            text =  text.replace(new RegExp('\\b'+preparedPattern+'[., ]', 'gi'), " <span class='label label-default skill'>"+skill[i]+"</span> ");
         }
         $( this ).html(text);
     });

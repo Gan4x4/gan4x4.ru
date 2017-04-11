@@ -19,6 +19,11 @@ global.window = window;
 global.$ = require('jquery');
 
 //*================== helper methods =========================
+
+function getHilighted(){
+    return $("body").find('.label');
+}
+
 function assertSkillsHilight(skills,$html){
     var $labels = $html.find('.label');
     // count off occurences equal to test array size.
@@ -69,6 +74,17 @@ describe('Utils_functions_to_change_html', function() {
         $body.html("bla bla C++ .... kk");
         hilightSkills($body);
         assertSkillsHilight(["c++"],$body);        
+    });
+    
+    
+    it('World inside another', function() {
+        var $body = $("body"); 
+        $body.html("bla bla Javascript .... kk");
+        hilightSkills($body);
+        console.log($body.html());
+        var actual = getHilighted().text();
+        assert.equal('Javascript',actual);
+        //assertSkillsHilight(["java","javascript"],$body);        
     });
   });
 });
