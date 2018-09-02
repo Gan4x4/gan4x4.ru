@@ -86,6 +86,33 @@ describe('Utils_functions_to_change_html', function() {
         assert.equal('Javascript',actual);
         //assertSkillsHilight(["java","javascript"],$body);        
     });
+    
+    it('World inside hyperlink', function() {
+        var $body = $("body"); 
+        $body.html("bla bla <a href=\"http://android.google.com\">Android</a>");
+        var expected_links = [];
+        $body.find("a").each(function(){
+            expected_links.push($(this).attr('href')); 
+        });
+        
+        
+        hilightSkills($body);
+        var actual_links = [];
+        $body.find("a").each(function(){
+            actual_links.push($(this).attr('href')); 
+        });
+        
+        assert.deepEqual(expected_links,actual_links);
+        
+        //console.log($body.html());
+        var actual = getHilighted().text();
+        //console.log("Actual =".actual);
+        assert.equal([],actual);
+        
+        
+        
+    });
+    
   });
 });
 

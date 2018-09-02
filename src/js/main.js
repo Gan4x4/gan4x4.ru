@@ -22,6 +22,7 @@ import Project from './project.js';
             formatLinks($filledPattern);
             $("#portfolio .container-fluid").append($pattern);
         }
+        addGitSitesIcons();
      }
        
      // When your page loads equal $( document ).ready(function() 
