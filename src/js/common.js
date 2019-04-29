@@ -32,7 +32,8 @@ export function addGitSitesIcons(){
             }
         });
         if (current){
-            var icon =  '<i class="fa fa-'+current+'" aria-hidden="true"></i> ';
+            //var icon =  '<i class="fa fa-'+current+'" aria-hidden="true"></i> ';
+            var icon =  'fa';
             if ( $(this).html().indexOf(icon) === -1){
                 // Add icon only once
                 $(this).html(icon+$(this).html());
